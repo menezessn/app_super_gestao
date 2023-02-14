@@ -1,0 +1,31 @@
+body{
+    overflow-x: hidden;
+}
+
+
+.bg-contact{
+    background-color: #1F8DE0;
+}
+
+.bg-inicial{
+    background-color: #1B7ECB;
+}
+
+.btn-contact{
+    width: 100%;
+}
+
+footer{
+    border-top: 2px solid gray;
+    background-color: #e3e0e4;
+}
+
+.contato{
+    background-color: #1B7ECB;
+    
+}
+
+.margin-end{
+    margin-bottom: 20em;
+
+}
