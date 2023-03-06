@@ -1,17 +1,34 @@
 @extends('site.layouts.basico')
 
-@section('titulo', 'Contato')
+@section('titulo', 'login')
 
 @section('conteudo')
 
     <div>
-        <h1 class="contato text-white text-center pt-5 pb-5">Contato</h1>
+        <h1 class="contato text-white text-center pt-5 pb-5">Login</h1>
     </div>
 
-    <div class="container mt-5 margin-end">
-    @component('site.layouts._components.form_contato', ['motivo_contatos' => $motivo_contatos])
-    @endcomponent
-</div>
+    <div style="width:30%; margin-left:auto; margin-right:auto;">
+        <div class="container mt-5 margin-end">
+            <form action="{{route('site.login')}}" method="post">
+                @csrf
+                <div class="form-group">
+                  <label for="exampleInputEmail1">Email</label>
+                  <input name='email' value='{{old('email')}}' type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Seu email">
+                  {{$errors->has('email') ? $errors->first('email') : ''}}
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputPassword1">Senha</label>
+                  <input type="password" value='{{old('usuario')}}' name="senha" class="form-control" id="exampleInputPassword1" placeholder="Senha">
+                  {{$errors->has('senha') ? $errors->first('senha') : ''}}
+                </div>
+             
+                <button type="submit" class="btn btn-primary">Enviar</button>
+              </form>
+              {{ isset($erro) && $erro != null ? $erro : '' }}
+        </div>
+    </div>
+    
 
 <footer>
 

@@ -30,7 +30,7 @@
               <div class="container mt-4 mb-4">
                   <h1 class="text-white">Contato</h1> 
                   <p class="text-white">Caso tenha qualque duvida por favor entre em contato com a nossa equipe pelo formulário abaixo.</p>
-                  @component('site.layouts._components.form_contato')
+                  @component('site.layouts._components.form_contato', ['motivo_contatos' => $motivo_contatos])
                     @endcomponent
               </div>
 
